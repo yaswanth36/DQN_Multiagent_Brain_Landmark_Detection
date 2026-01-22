@@ -20,7 +20,7 @@ class Evaluator(object):
             num_runs = 1 
             fixed_spawn = [None]
         else:
-            # fixed_spawn should be, for example, [0.5 , 0.5 , 0.5, 0, 0, 0] for 2 runs
+            # fixed_spawn should be, for example, [0.5 , 0.5 , 0.5, 0, 0,0] for 2 runs
             # In the first run agents spawn in the middle and in the second they will spawn from the corner
             fixed_spawn = np.array(fixed_spawn).reshape((-1, 3)) # 3 dimensions
             num_runs = fixed_spawn.shape[0]
@@ -95,3 +95,4 @@ class Evaluator(object):
                 if not isOver[i]:
                     sum_r[i] += r[i]
         return sum_r, start_dists, q_values, info
+
